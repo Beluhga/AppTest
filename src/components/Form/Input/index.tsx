@@ -1,40 +1,27 @@
 import React from 'react';
+import {TextInputProps} from 'react-native';
 
 import { 
     Container,
-    Day,
-    Icon
+    Icon,
+    Config
+  
     
  } from './style';
 
- interface Props {
-    title: string;
-    onPress: () => void;
- }
+ type Props = TextInputProps;
  
 
-export function Input({
-   title,
-   onPress
-   
-}: Props){
+export function Input({...rest}: Props){
     return(
         
-        
-        <Container onPress={onPress}>
-            
-        <Day>{title}</Day>
+        <Config> 
+        <Container {...rest} />
         <Icon name="chevron-down" />
-        
-            
-        </Container>
-        
-        
-        
-
-        
-
-        
+        </Config>
 
     );
 }
+
+
+

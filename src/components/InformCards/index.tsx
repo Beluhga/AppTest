@@ -13,15 +13,14 @@ import {
 
 } from './styles';
 import { Title } from '../Title';
-import { Register } from '../Register';
 
 
 
 
-export function Dashboard() {
+export function InformCards() {
     return(
         
-        <Container>
+        <Container >
          
         <LinearGradient
         start={{x:0, y:0.20}}
@@ -46,7 +45,6 @@ export function Dashboard() {
 
         <Title />
         <HightlightForm>
-        <Register />
         </HightlightForm>
         </Container>
         

@@ -13,7 +13,8 @@ import {
 
 import AppLoading from 'expo-app-loading';
 
-import { Dashboard } from './src/components/Dashboard';
+import { NavigationContainer} from '@react-navigation/native';
+import { AppRoutes } from './src/routes/app.routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,9 +30,11 @@ export default function App() {
   return (
 
       <ThemeProvider theme={theme}>
+        <NavigationContainer>
 
-      <Dashboard />
+        <AppRoutes />
 
+        </NavigationContainer>
       </ThemeProvider>
 
   );

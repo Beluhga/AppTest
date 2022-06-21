@@ -1,32 +1,40 @@
 import styled from "styled-components/native";
-import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { RFValue } from "react-native-responsive-fontsize";
+import { TextInput } from "react-native";
 
 
-export const Container = styled(TouchableOpacity).attrs({
-    activeOpacity: 0.7
-})`
-    width: 100%;
+export const Container = styled(TextInput)`
+    
+    width: 90%;
     background-color: ${({theme}) => theme.colors.input};
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    padding: 13px 14px;
-    margin-bottom: 20px;
-`;
-
-export const Day = styled.Text`
-    font-family: ${({theme}) => theme.fonts.regular};
-    font-size: ${RFValue(10)}px;
-    margin-left: 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    font-size: ${RFValue(14)}px;
+    padding: 10px ;
 
 `;
+
 export const Icon = styled(Entypo)`
+    align-items: center;
+    padding: 15px ;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 10px;
     font-size: ${RFValue(20)}px;
     color: ${({theme}) => theme.colors.primary};
-
+    background-color: ${({theme}) => theme.colors.input};
 
 
 `;
+
+export const Config = styled.View`
+flex-direction: row;
+margin-bottom: 10px;
+
+    
+`;
+
