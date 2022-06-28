@@ -1,5 +1,6 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Register2 } from './Form/Register2';
 
 
 import { 
@@ -45,6 +46,7 @@ export function InformCards() {
 
         <Title />
         <HightlightForm>
+            <Register2 />
         </HightlightForm>
         </Container>
         

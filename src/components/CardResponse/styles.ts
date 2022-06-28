@@ -19,9 +19,6 @@ export const Header = styled.View`
 
 `;
 
-export const HightlightForm = styled.ScrollView.attrs({
-    showsVerticalScrollIndicator: false
-})``;
 
 export const Molds = styled.View`
     flex-direction: row;
@@ -45,23 +42,19 @@ export const Icon = styled.View`
     margin-top: ${RFValue(30)}px;
     margin-right: ${RFValue(20)}px;
 
+`
+
+export const Main = styled.View`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
 `;
 
- export const LoadContainer = styled.View`
-    flex: 1;
-    justify-content: center;
-    align-items: center;
- `;
+export const Texto = styled.Text`
+    font-size: 40px;
+`;
 
-
-
-    
-
-/*
-
-    color: ${({theme}) => theme.colors.primary};
-    font-family: ${({theme}) => theme.fonts.regular};
-    font-size: 24px;
-
-
-*/
+export const Idade = styled.Text`
+    font-size: 40px;
+`;

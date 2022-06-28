@@ -1,23 +1,20 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { Button } from '../Form/Button';
+import React from 'react';
+import { Button } from '../../Button';
 import { useForm} from 'react-hook-form';
-import { InputForm } from '../Form/InputForm';
 import * as Yup from 'yup';
 import { yupResolver} from '@hookform/resolvers/yup';
 import { useNavigation } from '@react-navigation/native';
 
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
-
-
 
 import { 
     Container,
     Header,
     Title,
     Form,
-    Fields
+    Fields,
  } from './styles';
+import { InputForm } from '../InputForm';
 
  interface FormData {
     day: string;
@@ -45,7 +42,7 @@ import {
 
 export function Register(){
 
-    
+  const navigation = useNavigation();
 
     const {
         control,
@@ -55,15 +52,14 @@ export function Register(){
         resolver: yupResolver(schema)
     });
 
-async function handleRegister(form: FormData | any){
+     function handleRegister(form: FormData | any){
 
-        const data = {
-            
-            day: form.day,
-            month: form.month,
-            year: form.year
-        }
-       
+       const data = {
+        day: form.day,
+        month: form.month,
+        year: form.year
+
+       }
         if(form.day === new Date().getDate()){
             
         } else { return Alert.alert('Dia Invalido'); }
@@ -76,59 +72,27 @@ async function handleRegister(form: FormData | any){
 
         } else { return Alert.alert('Ano Invalido'); }
 
-        console.log(data);
+        Alert.alert('Data enviada com sucesso');
+
         
-    }
-
-    const ProximaTela = () => {
-        const navigation = useNavigation(); 
-        navigation.navigate("Setting")
-
-    }
-
-    const ExecutarOsDois = function(){
-        handleSubmit(handleRegister);
-        ProximaTela();
-    }
-
-    
-
-
-
-
-
-
-        /*try {
-            const dataKey = '@testapp:transactions'; // para armazenar
-
-            await AsyncStorage.setItem(dataKey, JSON.stringify(data));
-            
-            Alert.alert('Data enviada com sucesso');
-        } catch (error) {
-            console.log(error)
+        navigation.navigate('Setting', {
+            day: form.day,
+            month: form.month,
+            year: form.year
+        
+        
+        });
 
         }
-      
-    }
-
-    useEffect(() => {
-        async function loadData(){
-        const data = await AsyncStorage.getItem(dataKey);
-        console.log(JSON.parse(data!))
-        
-
-        }
-
-        loadData();
-
-    },[])*/
-
-    
 
     return(
+
+
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
         <Container >
+
+      
             <Header>
                 <Title> Data de hoje:</Title>
             </Header>
@@ -136,7 +100,7 @@ async function handleRegister(form: FormData | any){
         <Form>
         
     
-        <InputForm 
+        <InputForm
         name="day" 
         control={control}
         placeholder="Dia"
@@ -164,14 +128,15 @@ async function handleRegister(form: FormData | any){
          <Fields>
         <Button 
          title="OK" 
-         onPress={ExecutarOsDois}
+         onPress={handleSubmit(handleRegister)}
         />
         </Fields>
         </Form>
 
-        
-        </Container>
-        </TouchableWithoutFeedback>
+     
 
+        </Container>
+    </TouchableWithoutFeedback>
+     
     )
 }

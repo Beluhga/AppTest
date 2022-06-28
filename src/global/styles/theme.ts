@@ -12,7 +12,8 @@ export default {
 
         shape: '#ffffff',
         background: '#f0f2f5',
-        input: '#dadada'
+        input: '#dadada',
+        
         
     },
 

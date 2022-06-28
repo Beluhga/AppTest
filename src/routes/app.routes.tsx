@@ -4,7 +4,7 @@ import { Dashboard } from '../components/Dashboard';
 import { FontAwesome } from '@expo/vector-icons';
 import theme from '../global/styles/theme';
 import { InformCards } from '../components/InformCards';
-
+import {CardResponse} from '../components/CardResponse';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
@@ -51,7 +51,7 @@ export function AppRoutes(){
 
             <Screen
                 name="Config"
-                component={InformCards}
+                component={CardResponse}
                 options={{
                     tabBarIcon:(({size, color}) =>
                     <FontAwesome 
@@ -65,7 +65,7 @@ export function AppRoutes(){
 
             <Screen
                 name="Email"
-                component={Dashboard}
+                component={CardResponse}
                 options={{
                     tabBarIcon:(({size, color}) =>
                     <FontAwesome 
