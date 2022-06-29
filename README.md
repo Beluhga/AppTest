@@ -14,7 +14,7 @@ A aplicação consiste em uma confirmação de Data do dia junto a data de anive
 
 
 # Tecnologias utilizadas
-## Front end
+## Mobile
 -  JS / TypeScript
 - React Native
 - Yupp
