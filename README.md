@@ -4,8 +4,6 @@
 
 # Sobre o projeto
 
-
-
 AppTest é um aplicatico Mobile com React-Native
 
 A aplicação consiste em uma confirmação de Data do dia junto a data de aniversario para saber a idade da pessoa
