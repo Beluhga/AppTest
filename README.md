@@ -32,7 +32,7 @@ Pré-requisitos: Expo
 git clone https://github.com/Beluhga/AppTest.git
 
 # entrar na pasta do projeto Mobile
-cd AppTest-paraEstudo
+cd AppTest
 
 # instalar dependências
 yarn install
