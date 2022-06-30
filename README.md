@@ -29,7 +29,7 @@ Pré-requisitos: Expo
 
 ```bash
 # clonar repositório
-git clone https://github.com/Beluhga/AppTest-paraEstudo.git
+git clone https://github.com/Beluhga/AppTest.git
 
 # entrar na pasta do projeto Mobile
 cd AppTest-paraEstudo
